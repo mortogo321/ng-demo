@@ -1,27 +1,38 @@
-# NgDemo
+# Angular Demo Scaffold
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+An Angular project scaffold with routing, shared header/footer components, and Tailwind CSS wired in. Currently placeholder pages (Welcome, Employee) with no application logic yet.
 
-## Development server
+## What's inside
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Routed pages: `/` (Welcome), `/employee` (Employee — placeholder)
+- Shared `HeaderComponent` / `FooterComponent`
+- Tailwind CSS configured via PostCSS
+- Unit test specs (Karma + Jasmine) scaffolded per component
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular, TypeScript, RxJS
+- Tailwind CSS
+- Karma, Jasmine
 
-## Build
+## Quickstart
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+bun install
+bun run start
+```
 
-## Running unit tests
+The dev server runs on `http://localhost:4200`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+bun run build   # production build to dist/
+bun run test    # unit tests via Karma
+```
 
-## Running end-to-end tests
+## Structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+src/app/components/   # Shared header/footer
+src/app/pages/         # Routed page components
+src/app/app-routing.module.ts
+```
