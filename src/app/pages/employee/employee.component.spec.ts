@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { EmployeeComponent } from './employee.component';
 
 describe('EmployeeComponent', () => {
-  let component: EmployeeComponent;
-  let fixture: ComponentFixture<EmployeeComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmployeeComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(EmployeeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      imports: [EmployeeComponent],
+    }).compileComponents();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(EmployeeComponent);
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should render the employee placeholder', () => {
+    const fixture = TestBed.createComponent(EmployeeComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('employee works!');
   });
 });
